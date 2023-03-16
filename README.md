@@ -1,1 +1,3 @@
-# exam
+yarn install
+
+yarn start

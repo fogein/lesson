@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { FC, ReactNode } from 'react'
 
-export const IconButton = (props:any) => {
-  const {icon, active} = props
+type PropsType = {
+  icon: string | ReactNode;
+  active?: boolean;
+  rounded?: boolean;
+  iconClassName?: string;
+  className?: string;
+}
+
+export const IconButton: FC<PropsType> = (props) => {
+  const {icon, active, rounded, iconClassName, className} = props
   return (
-    <div className={`w-[45px] h-[45px] cursor-pointer flex justify-center items-center bg-[#3456ffbf] rounded-[15px] hover:bg-[#3456FF] ${active && 'bg-[#3456FF]'}`}>
-        <img className='w-[24px] h-[24px]' src={icon} alt="LOGO" />
+    <div className={`${className ? className : 'w-[45px] h-[45px] '} cursor-pointer flex justify-center items-center bg-[#3456ffbf] ${rounded ? 'rounded-full' : 'rounded-[15px]'} hover:bg-[#3456FF] ${active && 'bg-[#3456FF]'}`}>
+        {typeof icon === 'string' ? <img className={`${iconClassName ? iconClassName : 'w-[24px] h-[24px]'}`} src={icon} alt="LOGO" /> :
+        icon}
     </div>
   )
 }

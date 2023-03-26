@@ -1,21 +1,28 @@
 import React from 'react'
+import { ContentDivider } from '../shared/ui/content-divider'
+import { CreatePostCard } from '../shared/ui/create-post-card'
 import { Header } from '../shared/ui/header'
-import { LeftProfile } from '../shared/ui/left-profile'
+import { ProfilePost } from '../shared/ui/profile-post'
+import { UsersSlider } from '../shared/ui/users-slider'
+import { CenterContent } from '../widgets/center-content/ui'
+
+import { LeftContent } from '../widgets/left-content/ui'
 
 
 export const Layout = () => {
   return (
     <div>
       <Header />
-      <div className='pt-[23px] px-[90px]'>
+      <div className='pt-[23px] pr-[165px] pl-[164px]'>
         <div className='flex gap-[30px]'>
           <div>
-            <LeftProfile />
+            <LeftContent />
           </div>
-          <div className='w-[614px] h-[150px] bg-[#fff]'>
+          <div className='w-[539px]'>
+            <CenterContent />
           </div>
           <div>
-            <LeftProfile />
+            <LeftContent />
           </div>
         </div>
       </div>

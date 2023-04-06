@@ -1,13 +1,13 @@
-import React, { FC, ReactNode } from 'react'
-type PropsType = {
+import React, { FC, ForwardedRef, forwardRef, ReactNode } from 'react'
+type BoxType = {
   className?: string;
   children: ReactNode; 
   borderRadius?: number; 
 }
 
-export const Box: FC<PropsType> = (props) => {
-  const { children, className, borderRadius = 32 } = props;
+export const Box = forwardRef((props: BoxType , forwardedRef) => {
+  const { children, className, borderRadius = 32, ...remainingProps } = props;
   return (
-    <div style={{borderRadius: `${borderRadius}px`}} className={` bg-[#fff] ` + className}>{children}</div>
+    <div ref={forwardedRef as ForwardedRef<HTMLInputElement>} style={{borderRadius: `${borderRadius}px`}} className={` bg-[#fff] ` + className} {...remainingProps}>{children}</div>
   )
-}
+})

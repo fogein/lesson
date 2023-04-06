@@ -8,8 +8,10 @@ import { Divider } from './divider'
 import { IconButton } from './icon-button'
 import { Input } from './input'
 import { Avatar } from './avatar'
-const arr = [{logo: Home},{logo: Home},{logo: Home},{logo: Home},{logo: Home},]
+import useAuth from '../../hook/use-auth'
+const arr = [{ logo: Home }, { logo: Home }, { logo: Home }, { logo: Home }, { logo: Home },]
 export const Header = () => {
+  const auth = useAuth()
   return (
     <div className='h-[89px] bg-[#fff] pl-[90px]'>
       <div className='h-full flex items-center'>
@@ -17,17 +19,18 @@ export const Header = () => {
 
         <div className='mr-[25px] w-[488px]'><Input beforeIcon={Search} /></div>
 
-        <div className='flex items-center gap-[30px] mr-[17.5px]'>{arr.map((item, index) => (<IconButton icon={item.logo} active={index === 0} />))}</div>
+        <div className='flex items-center gap-[30px] mr-[17.5px]'>{arr.map((item, index) => (<IconButton key={index} icon={item.logo} active={index === 0} />))}</div>
 
         <div className='mr-[37.5px]'><Divider /></div>
 
         <div className='flex items-center h-[45px]'>
-          <Avatar image={Profile} />
+          <div className='overflow-hidden w-[45px] h-[45px]'><Avatar image={Profile} /></div>
           <span className='text-[14px] font-[500] leading-[16px] text-[#070928]'>Wawan Purwanto</span>
           <div className='flex items-center justify-center bg-[#3456ffbf] w-[19.1px] h-[20px] rounded-full'>
-          <img src={Right} alt='123' />
+            <img src={Right} alt='123' />
           </div>
-          </div>
+          <button onClick={() => auth?.logout()}>exit</button>
+        </div>
       </div>
     </div>
   )

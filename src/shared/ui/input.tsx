@@ -1,14 +1,15 @@
 import React, { FC, ReactNode } from 'react'
-import { IconType } from 'react-icons';
 
 type InputType = {
   beforeIcon?: string;
   icon?: ReactNode;
   placeholder?: string;
+  height?: number;
+  width?: number;
 }
 
 export const Input: FC<InputType> = (props) => {
-  const { beforeIcon, icon, placeholder } = props
+  const { beforeIcon, icon, placeholder, height, width } = props
   const renderBeforeIcon = beforeIcon && (
     <div className="ml-[28px]">
       <img
@@ -28,7 +29,7 @@ export const Input: FC<InputType> = (props) => {
   )
   return (
     <div className='w-full'>
-      <div className='
+      <div style={{width: `${width}px`, height: `${height}px`}} className='
       h-[48px]
       font-regular
       rounded-[25px]
@@ -36,7 +37,7 @@ export const Input: FC<InputType> = (props) => {
     w-full
     flex
     items-center
-    transition pl-[38px]'>{renderBeforeIcon}
+    transition pl-[28px]'>{renderBeforeIcon}
         {renderInput}
         {renderIcon}</div>
     </div>

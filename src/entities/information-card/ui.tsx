@@ -14,7 +14,7 @@ export const InformationCard = () => {
     );
   };
   return (
-    <Box className='w-[256px] h-min'>
+    <Box className='w-[292px] h-min'>
       <div className='p-[30px_20px_20px_21px]'>
         <div>
           <Accordion onClick={clickAccordionHeaderBtn} active={activeAccordionItem.includes('groups')} id='groups' titleName='Groups' >

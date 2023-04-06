@@ -6,9 +6,11 @@ import { UsersSlider } from '../../shared/ui/users-slider'
 
 export const CenterContent = () => {
   return (
-    <div><UsersSlider />
+    <div>
+      <UsersSlider />
       <CreatePostCard />
       <ContentDivider />
-      <ProfilePost /></div>
+      <ProfilePost />
+    </div>
   )
 }

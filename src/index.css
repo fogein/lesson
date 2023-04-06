@@ -10,3 +10,21 @@ body{
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
+
+*::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent!important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent!important;
+}
+
+/* *::-webkit-scrollbar {
+  width: 3px !important;
+  height: 3px !important;
+} */

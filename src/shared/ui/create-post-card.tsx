@@ -15,14 +15,16 @@ export const CreatePostCard = () => {
     { text: 'Create Article', icon: <MdOutlineArticle size={18} fill='#fff' /> }
   ]
   return (
-    <Box className='p-[13px_32px_31px_13px] mt-[9px]' borderRadius={22}>
+    <Box className='p-[13px_27px_31px_13px] mt-[9px]' borderRadius={32}>
       <div className='flex items-center gap-[10px]'>
-        <Avatar width={68} height={60} className='!border-0' />
-        <Input placeholder='Start a post' />
+       <div className='flex items-center justify-center w-[60px]'>
+       <Avatar className='!border-0' />
+       </div>
+        <div><Input height={58} width={504} placeholder='Start a post' /></div>
       </div>
-      <div className='flex items-center justify-evenly mt-[15px]'>
-        {actionButtons.map(({ icon, text }) => (
-          <div className='flex items-center gap-[5px]'>
+      <div className='flex items-center justify-around mt-[15px] ml-[-15px]'>
+        {actionButtons.map(({ icon, text }, index) => (
+          <div key={index} className={`flex items-center gap-[5px] ${index === 2 && 'ml-[20px]'}`}>
             <IconButton rounded className='w-[32px] h-[32px]' icon={icon} />
             <span className='text-[14px] text-[#070928BF] leading-[16px] font-[400]'>{text}</span>
           </div>

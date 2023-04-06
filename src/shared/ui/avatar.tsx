@@ -11,8 +11,8 @@ type AvatarProps = {
 export const Avatar: FC<AvatarProps> = (props) => {
   const { image = ProfileAvatar, className, height, width } = props;
   return (
-    <div style={{width: `${width}px`, height: `${height}px`}} className='rounded-full overflow-hidden'>
-     {typeof image === 'string' ?  <img width={width} height={height} className={`${className} border-solid  rounded-full border-[#DBE7FF] border-[2.65px]`} src={image} alt="123" /> : <div className={`${className} flex items-center justify-center`}>{image}</div>}
+    <div className='w-full h-full rounded-full overflow-hidden'>
+     {typeof image === 'string' ?  <img className={`${className} w-full h-full border-solid rounded-full border-[#DBE7FF] border-[2.65px]`} src={image} alt="123" /> : <div className={`${className} flex items-center justify-center h-full w-full`}>{image}</div>}
     </div>
   )
 }
